@@ -1,0 +1,137 @@
+html,
+body {
+  margin: 0;
+  font-size: 16px;
+}
+
+:root {
+  --primary-color: #42b883;
+  --secondary-color: #35495e;
+  --error-color: rgb(232, 19, 43);
+  --success-color: #0cc408;
+}
+
+p {
+  display: block;
+  margin: 0px;
+}
+
+input[type="submit"],
+button {
+  min-width: 100px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 4px;
+  padding: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+label.error {
+  color: var(--error-color);
+  margin-bottom: 8px;
+  margin-top: 4px;
+  font-size: 12px;
+  width: 100%;
+  display: block;
+}
+
+.alert[type="error"] {
+  width: 200px;
+  background-color: var(--error-color);
+  color: white;
+  padding: 16px;
+  border-radius: 2px;
+  text-align: center;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.alert[type="success"] {
+  width: 200px;
+  background-color: var(--success-color);
+  color: white;
+  padding: 16px;
+  border-radius: 2px;
+  text-align: center;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card {
+  min-width: 250px;
+  margin: 32px;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+input {
+  padding: 8px;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  width: 100%;
+  margin-top: 16px;
+}
+
+input[type="submit"]:disabled {
+  background: gray;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.alert {
+  position: absolute;
+  top: 32px;
+}
+
+.banner-announcement {
+  padding-top: 16px;
+  font-size: 32px;
+}
+
+.products {
+  display: flex;
+  flex-direction: row;
+
+  .product {
+    padding: 0px;
+    width: 315px;
+
+    .product-name {
+      font-size: 20px;
+      color: whitesmoke;
+      background: var(--primary-color);
+      padding: 8px;
+      min-height: 40px;
+    }
+
+    .product-body {
+      font-size: 16px;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .product-footer {
+      padding: 8px;
+      text-align: right;
+
+      a {
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      a:hover {
+        color: black;
+      }
+    }
+  }
+}
+
+a,
+a:visited {
+  color: var(--secondary-color);
+}
