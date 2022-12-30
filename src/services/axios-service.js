@@ -2,8 +2,6 @@ import axios from "axios";
 
 export class AxiosService {
   constructor() {
-    const defaultUrl = "http://localhost:8000/api/v1";
-
     this.client = axios.create({
       baseURL: process.env.VUE_APP_API_BASE_URL,
     });

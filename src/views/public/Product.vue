@@ -35,9 +35,7 @@
             <div class="alert" type="error" v-if="alert">{{ alert }}</div>
 
             <template v-if="success">
-              <div class="product-txn-success">
-                {{ success }}
-              </div>
+              <div class="product-txn-success" v-html="success"></div>
               <div>
                 <button @click="refresh()">Make another purchase</button>
               </div>
@@ -100,17 +98,17 @@ export default {
   },
   methods: {
     refresh() {
-      this.creditIdentifier = {};
-    },
-    async getProductById() {
-      const result = await productService.getProductById(this.$route.params.id);
-      this.product = result;
       this.creditIdentifier = {
         key:
           this.product.required_credit_party_identifier_fields?.[0]?.[0] ||
           "mobile_number",
         value: "",
       };
+    },
+    async getProductById() {
+      const result = await productService.getProductById(this.$route.params.id);
+      this.product = result;
+      this.refresh();
     },
     async submitTxn() {
       if (this.error[this.creditIdentifier.key]) {
@@ -129,9 +127,9 @@ export default {
         return (this.alert = result?.data?.errors[0].message);
       }
 
-      if (result?.status?.id === 10000) {
-        this.success = "✅ Transaction is created.";
-      }
+      this.success = `✅ Transaction ID ${
+        result.id
+      } is ${result.status.class.message.toLowerCase()}.`;
     },
   },
   async mounted() {

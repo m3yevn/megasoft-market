@@ -1,24 +1,22 @@
 import Vue from "vue";
 import Router from "vue-router";
 import loginService from "./services/login-service";
+import decodeJwt from "jwt-decode";
 
 Vue.use(Router);
 
 export const authContext = {};
 
 const getAuthUser = (token) => {
-  const user = {};
-  const dataContents = token.split("|");
-  dataContents.map((dataString) => {
-    const [key, value] = dataString.split("==>");
-    user[key] = value;
-  });
-
-  return { ...user };
+  const dataContents = decodeJwt(token);
+  return { ...dataContents };
 };
 
 const checkAuthenticated = async () => {
   const token = localStorage.getItem("token");
+  if (!token) {
+    return [false, null];
+  }
   const isAuthenticated =
     !!authContext.user || (await loginService.validateToken(token));
   return [isAuthenticated, token];
