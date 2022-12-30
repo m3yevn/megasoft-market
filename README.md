@@ -7,12 +7,20 @@
 
 <hr/>
 
+### To install dependencies
+- Run `npm install` or `yarn install` whichever is convenient
+
 ### To build docker image, and run
 
 - Get .env file from the developer and paste it to the directory
 - Run `npm run docker-build` to build docker image
 - Run `npm run docker-run` to run the container and bind to port 8080
 - Run `npm run docker-container-rm` to remove container with force if any issues
+
+### To run in local environment as dev
+
+- Get .env file from the developer and paste it to the directory
+- Run `npm run serve` or `` to build docker image
 
 
 ## ⭐ Public Url
