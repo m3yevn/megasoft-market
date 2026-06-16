@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Megasoft Market — B2B digital value reseller portal</title>
+    <meta
+      name="description"
+      content="Megasoft Market is a B2B portal for resellers to browse promotions, purchase digital products (airtime, data, prepaid), and credit mobile numbers or accounts. Vue 2 + Express BFF by Kevin Moe Myint Myat."
+    />
+    <meta name="author" content="Kevin Moe Myint Myat" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="canonical" href="https://megasoft-market.vercel.app/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:title" content="Megasoft Market — B2B digital goods portal" />
+    <meta
+      property="og:description"
+      content="Reseller portal for digital value products — promotions, catalog, and instant credit to subscribers."
+    />
+    <meta property="og:url" content="https://megasoft-market.vercel.app/" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Megasoft Market",
+        "applicationCategory": "BusinessApplication",
+        "description": "B2B digital value reseller portal for promotions, product catalog, and subscriber credit transactions.",
+        "author": { "@type": "Person", "name": "Kevin Moe Myint Myat" }
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="logo"><span class="m">M</span>ega<span class="s">S</span>oft Market</a>
+        <nav class="nav">
+          <a href="/docs">Docs</a>
+          <a href="https://github.com/m3yevn/megasoft-market" rel="noopener">Client</a>
+          <a href="https://github.com/m3yevn/megasoft-market-bff" rel="noopener">API</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="container">
+          <span class="version-badge">Eternal Flame · B2B digital commerce</span>
+          <h1>Sell digital value, <span class="accent">not shelf stock</span></h1>
+          <p class="hero-lead">
+            Megasoft Market is a <strong>reseller portal</strong> — not a consumer shopping site.
+            Authenticated partners browse telco and digital product catalogs, run promotion bundles,
+            and credit airtime or prepaid value directly to a subscriber's mobile number or account.
+          </p>
+          <p>
+            <a class="btn" href="/docs">Architecture docs</a>
+            <a class="btn btn-outline" href="https://github.com/m3yevn/megasoft-market">View source</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="features">
+        <div class="container">
+          <h2>What it does</h2>
+          <div class="grid">
+            <article class="card">
+              <h3>Promotion bundles</h3>
+              <p>
+                Dashboard of live promos — title, operator, country, date range, and linked product
+                bundles. Resellers drill into terms and eligible SKUs.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Product catalog</h3>
+              <p>
+                Digital products with wholesale pricing, benefits, validity, availability zones,
+                and operator metadata — sourced from an upstream value-services API.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Instant credit</h3>
+              <p>
+                Purchase flow credits the end user by <code>mobile_number</code> or
+                <code>account_number</code>. Transactions post to an async transactions API with
+                auto-confirm.
+              </p>
+            </article>
+          </div>
+
+          <div class="callout">
+            <h3>Who is it for?</h3>
+            <p>
+              <strong>B2B resellers and distributors</strong> — telecom agents, prepaid aggregators,
+              or fintech partners who need a branded UI on top of a digital value supply API.
+              Admins get transaction history and balance views; standard users buy and credit only.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        Eternal Flame ·
+        <a href="https://kevinmoemyintmyat.vercel.app">Kevin Moe Myint Myat</a> ·
+        Vue 2 client + Express BFF
+      </div>
+    </footer>
+  </body>
+</html>

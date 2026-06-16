@@ -1,93 +1,43 @@
-# Megasoft-market
+# Megasoft Market
 
-****
+**B2B digital value reseller portal** — browse promotions and products, credit airtime/prepaid to subscribers.
 
-<p>Version 0.1.0</p>
-<p>by m3yevn</p>
+| | |
+|---|---|
+| **Landing** | https://megasoft-market.vercel.app |
+| **Docs** | [/docs](https://megasoft-market.vercel.app/docs) |
+| **Client** | This repo (Vue 2 SPA) |
+| **API** | [megasoft-market-bff](https://github.com/m3yevn/megasoft-market-bff) |
 
-<hr/>
+## What it is (and isn't)
 
-### To install dependencies
-- Run `npm install` or `yarn install` whichever is convenient
+**Yes — selling digital value:** resellers purchase wholesale digital products (mobile airtime, data bundles, prepaid SKUs) and **credit** them to an end user's mobile number or account via async transactions.
 
-### To build docker image, and run
+**No — not Amazon:** there is no physical cart, shipping, or consumer checkout. It's a **partner portal** on top of an upstream digital value services API.
 
-- Get .env file from the developer and paste it to the directory
-- Run `npm run docker-build` to build docker image
-- Run `npm run docker-run` to run the container and bind to port 8080
-- Run `npm run docker-container-rm` to remove container with force if any issues
+## Features
 
-### To run in local environment as dev
+- Promotion bundles with operator/country metadata
+- Product catalog (wholesale price, benefits, validity, zones)
+- Purchase → credit `mobile_number` or `account_number`
+- Admin: transactions + balances
 
-- Get .env file from the developer and paste it to the directory
-- Run `npm run serve` or `` to build docker image
+## Local dev
 
+```bash
+# Terminal 1 — BFF (needs .env)
+cd megasoft-market-bff && npm install && npm run dev
 
-## ⭐ Public Url
-
-N.A
-
-## 📚 Tech Stack
-
-N.A
-
-## 📸 Screenshots
-
-N.A
-
-## 📜 Scripts
-
-```sh
-serve : $ vue-cli-service serve
-build : $ vue-cli-service build
-lint : $ vue-cli-service lint
-docker-build : $ docker build . -t megasoft-market-client:latest
-docker-image-rm : $ docker image rm megasoft-market-client:latest
-docker-container-rm : $ docker rm -f megasoft-market-client
-docker-run : $ docker run -it -p 8080:80 --rm -d --name megasoft-market-client megasoft-market-client:latest
-
+# Terminal 2 — Vue client
+cd megasoft-market && npm install && npm run serve
 ```
 
-## 🔑 Keywords
+Docker: `npm run docker-build && npm run docker-run` (port 8080).
 
+## Stack
 
+Vue 2 · Vue Router · Express BFF · JWT auth · axios · Docker
 
-## 👾 Submit issues at
+## License
 
-Visit the repository to open bug reports and issues
-
-## ©️ License
-
-This project does not have a license.
-
-## Dependencies
-
- - axios : $ ^1.2.1
- - core-js : $ ^3.8.3
- - dotenv : $ ^16.0.3
- - jwt-decode : $ ^3.1.2
- - lodash : $ ^4.17.21
- - marked : $ ^4.2.5
- - sass : $ ^1.57.1
- - sass-loader : $ ^13.2.0
- - vue : $ ^2.6.14
- - vue-alertify : $ ^1.1.0
- - vue-router : $ ^3.6.5
-
-
-## Dev Dependencies
-
- - @babel/core : $ ^7.12.16
- - @babel/eslint-parser : $ ^7.12.16
- - @vue/cli-plugin-babel : $ ~5.0.0
- - @vue/cli-plugin-eslint : $ ~5.0.0
- - @vue/cli-service : $ ^5.0.4
- - eslint : $ ^7.32.0
- - eslint-plugin-vue : $ ^8.0.3
- - vue-template-compiler : $ ^2.6.14
-
-
-<img src="https://cdn.dribbble.com/users/2401141/screenshots/5487982/developers-gif-showcase.gif"/>
-
-<hr/>
-Happy Coding!
+MIT · Kevin Moe Myint Myat · Eternal Flame

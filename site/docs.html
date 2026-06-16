@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Megasoft Market — Docs</title>
+    <meta name="description" content="Megasoft Market architecture — Vue reseller client, Express BFF, digital value API integration." />
+    <link rel="canonical" href="https://megasoft-market.vercel.app/docs" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="logo"><span class="m">M</span>ega<span class="s">S</span>oft Market</a>
+        <nav class="nav"><a href="/">Home</a></nav>
+      </div>
+    </header>
+    <main class="docs-main">
+      <div class="container">
+        <h1>Documentation</h1>
+        <p>B2B digital value reseller portal · two-repo architecture</p>
+
+        <h2>Business model</h2>
+        <p>
+          Megasoft Market is a <strong>wholesale/reseller front-end</strong>. Partners log in, browse
+          promotions and products, and submit purchases that <em>credit</em> digital value to end
+          subscribers (mobile airtime, data bundles, prepaid SKUs — depending on upstream catalog).
+        </p>
+        <p>It is not a cart-checkout e-commerce site for physical goods.</p>
+
+        <h2>Architecture</h2>
+        <pre>Reseller (browser)
+    ↓ JWT
+megasoft-market (Vue 2 SPA)
+    ↓ REST
+megasoft-market-bff (Express)
+    ↓ cached HTTP
+Upstream digital value / DVS API
+    ↓
+async/transactions → credit subscriber</pre>
+
+        <h2>Repos</h2>
+        <ul>
+          <li><a href="https://github.com/m3yevn/megasoft-market">megasoft-market</a> — Vue 2 client (promotions, products, purchase UI, admin)</li>
+          <li><a href="https://github.com/m3yevn/megasoft-market-bff">megasoft-market-bff</a> — Express BFF (auth, cache, proxy)</li>
+        </ul>
+
+        <h2>API routes (BFF)</h2>
+        <ul>
+          <li><code>POST /login</code> · <code>POST /token</code></li>
+          <li><code>GET /promotions</code> · <code>GET /products</code></li>
+          <li><code>POST /transactions</code> — credit purchase</li>
+          <li><code>GET /transactions</code> · <code>GET /balances</code> — admin only</li>
+        </ul>
+
+        <h2>Roles</h2>
+        <ul>
+          <li><strong>Reseller</strong> — dashboard, browse, purchase/credit</li>
+          <li><strong>Admin</strong> — transactions list, balance overview</li>
+        </ul>
+
+        <h2>Local dev</h2>
+        <pre># BFF (port 8000) — needs .env with upstream API credentials
+cd megasoft-market-bff && npm install && npm run dev
+
+# Client (port 8080) — point VUE_APP_API_URL at BFF
+cd megasoft-market && npm install && npm run serve
+
+# Or Docker
+npm run docker-build && npm run docker-run</pre>
+
+        <h2>Rebirth roadmap</h2>
+        <ul>
+          <li>Phase 1 ✅ — Eternal Flame landing + docs (this site)</li>
+          <li>Phase 2 🔜 — Vue 3 + Vite reseller app refresh</li>
+          <li>Phase 3 🔜 — Unified Vercel deploy (static + SPA + serverless BFF)</li>
+        </ul>
+
+        <h2>Rebirth tier</h2>
+        <p>
+          Promising as a <strong>B2B fintech/telco demo</strong> if you want a portfolio piece showing
+          catalog + transaction flows. Requires live upstream API or mock layer to run end-to-end.
+        </p>
+      </div>
+    </main>
+    <footer class="site-footer"><div class="container"><a href="/">← Back</a></div></footer>
+  </body>
+</html>
