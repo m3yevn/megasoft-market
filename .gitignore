@@ -2,6 +2,7 @@
 node_modules
 /dist
 shop/dist
+site/app
 
 
 # local env files
