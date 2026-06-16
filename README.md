@@ -1,42 +1,47 @@
 # Megasoft Market
 
-**B2B digital value reseller portal** — browse promotions and products, credit airtime/prepaid to subscribers.
+**Parody B2B digital nonsense portal** — AI prompts, 3D models, meme NFTs, and other absurd SKUs. Full mock catalog on Vercel.
 
 | | |
 |---|---|
 | **Landing** | https://megasoft-market.vercel.app |
+| **Shop** | [/app](https://megasoft-market.vercel.app/app/) |
 | **Docs** | [/docs](https://megasoft-market.vercel.app/docs) |
-| **Client** | This repo (Vue 2 SPA) |
-| **API** | [megasoft-market-bff](https://github.com/m3yevn/megasoft-market-bff) |
+| **Legacy** | Vue 2 client in `legacy/vue2-client/` · [megasoft-market-bff](https://github.com/m3yevn/megasoft-market-bff) |
 
 ## What it is (and isn't)
 
-**Yes — selling digital value:** resellers purchase wholesale digital products (mobile airtime, data bundles, prepaid SKUs) and **credit** them to an end user's mobile number or account via async transactions.
+**Yes — parody marketplace:** resellers browse promotions and “acquire” nonsense digital goods via a mock transaction API. Suggested donation amounts are optional hints.
 
-**No — not Amazon:** there is no physical cart, shipping, or consumer checkout. It's a **partner portal** on top of an upstream digital value services API.
+**No — not a real business:** PayNow / Touch ’n Go QR codes are **voluntary consensual gifts**, not purchases. No upstream telco API. No goods owed.
+
+## Demo login
+
+- Reseller: `demo` / `demo`
+- Admin: `admin` / `admin`
 
 ## Features
 
-- Promotion bundles with operator/country metadata
-- Product catalog (wholesale price, benefits, validity, zones)
-- Purchase → credit `mobile_number` or `account_number`
-- Admin: transactions + balances
+- 12 mock products + 3 promotion bundles (`data/catalog.json`)
+- Vue 3 + Vite shop at `/app`
+- Vercel serverless API (`api/`)
+- Donation page with QR env placeholders
 
 ## Local dev
 
 ```bash
-# Terminal 1 — BFF (needs .env)
-cd megasoft-market-bff && npm install && npm run dev
-
-# Terminal 2 — Vue client
-cd megasoft-market && npm install && npm run serve
+npm install && npm install --prefix shop
+npm run dev:shop          # Vite on :5173, proxies /api
+vercel dev                # full stack including API
 ```
 
-Docker: `npm run docker-build && npm run docker-run` (port 8080).
+## Env (Vercel)
+
+See `.env.example` — `JWT_SECRET`, `DONATION_PAYNOW_QR_URL`, `DONATION_TNG_QR_URL`.
 
 ## Stack
 
-Vue 2 · Vue Router · Express BFF · JWT auth · axios · Docker
+Vue 3 · Vite · Vue Router · Vercel serverless · JWT · TypeScript
 
 ## License
 

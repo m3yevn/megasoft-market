@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { cors, getProductById, handleOptions } from "./lib/catalog.js";
-import { requireAuth } from "./lib/auth.js";
+import { cors, getProductById, handleOptions } from "../lib/catalog.js";
+import { requireAuth } from "../lib/auth.js";
 
 export default function handler(req: VercelRequest, res: VercelResponse) {
   if (handleOptions(req, res)) return;

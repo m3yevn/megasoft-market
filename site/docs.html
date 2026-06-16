@@ -19,62 +19,57 @@
     <main class="docs-main">
       <div class="container">
         <h1>Documentation</h1>
-        <p>B2B digital value reseller portal · two-repo architecture</p>
+        <p>Parody digital goods portal · unified Vercel deploy (v2)</p>
 
-        <h2>Business model</h2>
+        <h2>Business model (parody)</h2>
         <p>
-          Megasoft Market is a <strong>wholesale/reseller front-end</strong>. Partners log in, browse
-          promotions and products, and submit purchases that <em>credit</em> digital value to end
-          subscribers (mobile airtime, data bundles, prepaid SKUs — depending on upstream catalog).
+          Megasoft Market v2 is a <strong>wholesale/reseller front-end cosplay</strong>. Partners log in,
+          browse promotions and nonsense SKUs (AI prompts, 3D models, freebies), and submit mock
+          “acquire” transactions. Optional PayNow / TNG gifts are <em>voluntary donations</em> — not sales.
         </p>
-        <p>It is not a cart-checkout e-commerce site for physical goods.</p>
+        <p>It is not a real store, not financial advice, and not connected to a telco upstream API.</p>
 
         <h2>Architecture</h2>
         <pre>Reseller (browser)
     ↓ JWT
-megasoft-market (Vue 2 SPA)
-    ↓ REST
-megasoft-market-bff (Express)
-    ↓ cached HTTP
-Upstream digital value / DVS API
+/app — Vue 3 + Vite SPA (shop/)
+    ↓ REST /api/*
+api/ — Vercel serverless (TypeScript)
     ↓
-async/transactions → credit subscriber</pre>
+data/catalog.json — full mock dataset</pre>
 
-        <h2>Repos</h2>
+        <h2>Routes</h2>
         <ul>
-          <li><a href="https://github.com/m3yevn/megasoft-market">megasoft-market</a> — Vue 2 client (promotions, products, purchase UI, admin)</li>
-          <li><a href="https://github.com/m3yevn/megasoft-market-bff">megasoft-market-bff</a> — Express BFF (auth, cache, proxy)</li>
+          <li><code>/</code> — Eternal Flame landing (<code>site/</code>)</li>
+          <li><code>/docs</code> — this page</li>
+          <li><code>/app/</code> — Vue 3 shop (login, catalog, acquire, donation)</li>
+          <li><code>/api/*</code> — serverless handlers</li>
         </ul>
 
-        <h2>API routes (BFF)</h2>
+        <h2>API routes</h2>
         <ul>
-          <li><code>POST /login</code> · <code>POST /token</code></li>
-          <li><code>GET /promotions</code> · <code>GET /products</code></li>
-          <li><code>POST /transactions</code> — credit purchase</li>
-          <li><code>GET /transactions</code> · <code>GET /balances</code> — admin only</li>
+          <li><code>POST /api/login</code> · <code>POST /api/token</code></li>
+          <li><code>GET /api/promotions</code> · <code>GET /api/products</code> · <code>GET /api/products/:id</code></li>
+          <li><code>POST /api/transactions</code> — mock acquire</li>
+          <li><code>GET /api/donation</code> — PayNow / TNG QR config</li>
         </ul>
 
         <h2>Roles</h2>
         <ul>
-          <li><strong>Reseller</strong> — dashboard, browse, purchase/credit</li>
-          <li><strong>Admin</strong> — transactions list, balance overview</li>
+          <li><strong>Reseller</strong> — <code>demo</code> / <code>demo</code> — catalog + acquire</li>
+          <li><strong>Admin</strong> — <code>admin</code> / <code>admin</code> (reserved for future admin views)</li>
         </ul>
 
         <h2>Local dev</h2>
-        <pre># BFF (port 8000) — needs .env with upstream API credentials
-cd megasoft-market-bff && npm install && npm run dev
-
-# Client (port 8080) — point VUE_APP_API_URL at BFF
-cd megasoft-market && npm install && npm run serve
-
-# Or Docker
-npm run docker-build && npm run docker-run</pre>
+        <pre>npm install && npm install --prefix shop
+npm run dev:shop    # :5173, proxies /api
+vercel dev          # full stack</pre>
 
         <h2>Rebirth roadmap</h2>
         <ul>
-          <li>Phase 1 ✅ — Eternal Flame landing + docs (this site)</li>
-          <li>Phase 2 🔜 — Vue 3 + Vite reseller app refresh</li>
-          <li>Phase 3 🔜 — Unified Vercel deploy (static + SPA + serverless BFF)</li>
+          <li>Phase 1 ✅ — Eternal Flame landing + docs</li>
+          <li>Phase 2 ✅ — Vue 3 shop + mock API + donation page</li>
+          <li>Phase 3 🔜 — Ship unified Vercel deploy + optional QR env vars</li>
         </ul>
 
         <h2>Rebirth tier</h2>

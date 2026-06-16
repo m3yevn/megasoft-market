@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import catalog from "../data/catalog.json";
+import catalog from "../../data/catalog.json";
 
 export type Product = (typeof catalog.products)[number];
 export type Promotion = (typeof catalog.promotions)[number];
