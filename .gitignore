@@ -25,3 +25,4 @@ yarn.lock
 .env
 yarn.lock
 package-lock.json
+.vercel

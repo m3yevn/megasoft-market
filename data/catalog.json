@@ -1,0 +1,189 @@
+{
+  "promotions": [
+    {
+      "id": "promo-ai-starter",
+      "title": "AI Influencer Starter Pack™",
+      "description": "Everything you need to pretend you have a workflow. Includes 3 prompts and one (1) PNG with a glow.",
+      "start_date": "2026-01-01T00:00:00Z",
+      "end_date": "2027-12-31T23:59:59Z",
+      "operator": { "name": "MegaSoft Labs", "country": { "name": "The Cloud" } },
+      "product_ids": ["prompt-vibe-coder", "img-slug-with-hat", "model-cube-free"]
+    },
+    {
+      "id": "promo-3d-chaos",
+      "title": "3D Asset Fire Sale (not on fire)",
+      "description": "Bundle of questionable topology. Blender users will judge you lovingly.",
+      "start_date": "2026-01-01T00:00:00Z",
+      "end_date": "2027-06-30T23:59:59Z",
+      "operator": { "name": "Polygon Traders Guild", "country": { "name": "Singapore" } },
+      "product_ids": ["model-lowpoly-mug", "model-donut-ngons", "model-rigged-stick"]
+    },
+    {
+      "id": "promo-enterprise-free",
+      "title": "Enterprise Nothing Tier",
+      "description": "Zero features. Infinite roadmap slides. SOC2 vibes only.",
+      "start_date": "2026-03-01T00:00:00Z",
+      "end_date": "2026-12-31T23:59:59Z",
+      "operator": { "name": "SaaS Cosplay Inc", "country": { "name": "Delaware" } },
+      "product_ids": ["free-pricing-pdf", "free-terms-40-pages", "prompt-meeting-summarizer"]
+    }
+  ],
+  "products": [
+    {
+      "id": "prompt-vibe-coder",
+      "name": "Vibe Coder Prompt Pack",
+      "description": "10 prompts that all start with 'Act as a senior engineer who has seen things.'",
+      "type": "ai_prompt",
+      "category": "AI Prompts",
+      "prices": { "wholesale": { "amount": 0, "unit": "SGD" }, "suggested_donation": 3 },
+      "benefits": [{ "amount": { "total_including_tax": 0 }, "unit": "prompts" }],
+      "operator": { "name": "Prompt Broke Ltd", "country": { "name": "Internet" } },
+      "availability_zones": ["global"],
+      "required_credit_party_identifier_fields": [["email"]],
+      "validity": { "quantity": 30, "unit": "days" }
+    },
+    {
+      "id": "img-slug-with-hat",
+      "name": "AI Image: Slug in Fedora",
+      "description": "512×512 PNG. The hat is morally licensed. The slug is not.",
+      "type": "ai_image",
+      "category": "AI Images",
+      "prices": { "wholesale": { "amount": 0, "unit": "SGD" }, "suggested_donation": 5 },
+      "benefits": [{ "amount": { "total_including_tax": 1 }, "unit": "image" }],
+      "operator": { "name": "Diffusion Drama Co", "country": { "name": "Latent Space" } },
+      "availability_zones": ["global"],
+      "required_credit_party_identifier_fields": [["email"]],
+      "validity": null
+    },
+    {
+      "id": "model-cube-free",
+      "name": "3D Model: Default Cube",
+      "description": "Untextured cube.fbx. Has been in every game jam since 2011.",
+      "type": "3d_model",
+      "category": "3D Models",
+      "prices": { "wholesale": { "amount": 0, "unit": "SGD" }, "suggested_donation": 0 },
+      "benefits": [{ "amount": { "total_including_tax": 1 }, "unit": "mesh" }],
+      "operator": { "name": "Blender Heritage Society", "country": { "name": "Amsterdam" } },
+      "availability_zones": ["global"],
+      "required_credit_party_identifier_fields": [["email"]],
+      "validity": null
+    },
+    {
+      "id": "model-lowpoly-mug",
+      "name": "3D Model: Low-Poly Mug (12 tris)",
+      "description": "Coffee not included. Handle is optional DLC.",
+      "type": "3d_model",
+      "category": "3D Models",
+      "prices": { "wholesale": { "amount": 0, "unit": "SGD" }, "suggested_donation": 2 },
+      "benefits": [{ "amount": { "total_including_tax": 1 }, "unit": "obj" }],
+      "operator": { "name": "Polygon Traders Guild", "country": { "name": "Singapore" } },
+      "availability_zones": ["ap-southeast-1", "global"],
+      "required_credit_party_identifier_fields": [["email"]],
+      "validity": null
+    },
+    {
+      "id": "model-donut-ngons",
+      "name": "3D Model: Donut with N-gons",
+      "description": "Topology nightmares included free of charge.",
+      "type": "3d_model",
+      "category": "3D Models",
+      "prices": { "wholesale": { "amount": 0, "unit": "SGD" }, "suggested_donation": 4 },
+      "benefits": [{ "amount": { "total_including_tax": 1 }, "unit": "blend" }],
+      "operator": { "name": "Polygon Traders Guild", "country": { "name": "Singapore" } },
+      "availability_zones": ["global"],
+      "required_credit_party_identifier_fields": [["email"]],
+      "validity": null
+    },
+    {
+      "id": "model-rigged-stick",
+      "name": "3D Model: Fully Rigged Stick Figure",
+      "description": "IK/FK ready. Animation demo is just T-pose forever.",
+      "type": "3d_model",
+      "category": "3D Models",
+      "prices": { "wholesale": { "amount": 0, "unit": "SGD" }, "suggested_donation": 6 },
+      "benefits": [{ "amount": { "total_including_tax": 1 }, "unit": "fbx" }],
+      "operator": { "name": "Indie Asset Emporium", "country": { "name": "Myanmar" } },
+      "availability_zones": ["global"],
+      "required_credit_party_identifier_fields": [["email"]],
+      "validity": null
+    },
+    {
+      "id": "prompt-meeting-summarizer",
+      "name": "Prompt: Meeting That Could've Been Email",
+      "description": "Summarizes 60 minutes into 'we agreed to have another meeting.'",
+      "type": "ai_prompt",
+      "category": "AI Prompts",
+      "prices": { "wholesale": { "amount": 0, "unit": "SGD" }, "suggested_donation": 1 },
+      "benefits": [{ "amount": { "total_including_tax": 1 }, "unit": "prompt" }],
+      "operator": { "name": "SaaS Cosplay Inc", "country": { "name": "Delaware" } },
+      "availability_zones": ["global"],
+      "required_credit_party_identifier_fields": [["email"]],
+      "validity": { "quantity": 7, "unit": "days" }
+    },
+    {
+      "id": "free-pricing-pdf",
+      "name": "FREE: Enterprise Pricing PDF",
+      "description": "Every tier says 'Contact sales.' The contact is a black hole.",
+      "type": "freebie",
+      "category": "Free Stuff",
+      "prices": { "wholesale": { "amount": 0, "unit": "SGD" }, "suggested_donation": 0 },
+      "benefits": [{ "amount": { "total_including_tax": 1 }, "unit": "pdf" }],
+      "operator": { "name": "SaaS Cosplay Inc", "country": { "name": "Delaware" } },
+      "availability_zones": ["global"],
+      "required_credit_party_identifier_fields": [["email"]],
+      "validity": null
+    },
+    {
+      "id": "free-terms-40-pages",
+      "name": "FREE: Terms of Service (40 pages)",
+      "description": "You definitely read this. We definitely wrote it at 3am.",
+      "type": "freebie",
+      "category": "Free Stuff",
+      "prices": { "wholesale": { "amount": 0, "unit": "SGD" }, "suggested_donation": 0 },
+      "benefits": [{ "amount": { "total_including_tax": 1 }, "unit": "pdf" }],
+      "operator": { "name": "Legal But Make It Vibes", "country": { "name": "Cayman Islands" } },
+      "availability_zones": ["global"],
+      "required_credit_party_identifier_fields": [["email"]],
+      "validity": null
+    },
+    {
+      "id": "nft-right-click",
+      "name": "NFT: Screenshot of Right-Click Save",
+      "description": "Blockchain optional. Ownership feelings mandatory.",
+      "type": "parody_nft",
+      "category": "Meme Assets",
+      "prices": { "wholesale": { "amount": 0, "unit": "SGD" }, "suggested_donation": 0.5 },
+      "benefits": [{ "amount": { "total_including_tax": 1 }, "unit": "jpeg" }],
+      "operator": { "name": "Web3 Theatre Group", "country": { "name": "Metaverse" } },
+      "availability_zones": ["global"],
+      "required_credit_party_identifier_fields": [["wallet", "email"]],
+      "validity": null
+    },
+    {
+      "id": "img-gradient-hero",
+      "name": "AI Image: Purple Gradient Hero",
+      "description": "Every SaaS landing page from 2019–2024. Now yours.",
+      "type": "ai_image",
+      "category": "AI Images",
+      "prices": { "wholesale": { "amount": 0, "unit": "SGD" }, "suggested_donation": 2 },
+      "benefits": [{ "amount": { "total_including_tax": 1 }, "unit": "webp" }],
+      "operator": { "name": "Diffusion Drama Co", "country": { "name": "Latent Space" } },
+      "availability_zones": ["global"],
+      "required_credit_party_identifier_fields": [["email"]],
+      "validity": null
+    },
+    {
+      "id": "prompt-jira-ticket",
+      "name": "Prompt: Jira Ticket Generator",
+      "description": "Creates tickets with acceptance criteria nobody will read.",
+      "type": "ai_prompt",
+      "category": "AI Prompts",
+      "prices": { "wholesale": { "amount": 0, "unit": "SGD" }, "suggested_donation": 3 },
+      "benefits": [{ "amount": { "total_including_tax": 5 }, "unit": "templates" }],
+      "operator": { "name": "MegaSoft Labs", "country": { "name": "The Cloud" } },
+      "availability_zones": ["global"],
+      "required_credit_party_identifier_fields": [["email"]],
+      "validity": { "quantity": 90, "unit": "days" }
+    }
+  ]
+}
