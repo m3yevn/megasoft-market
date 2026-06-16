@@ -1,10 +1,13 @@
 {
   "version": 2,
   "installCommand": "npm install && npm install --prefix shop",
-  "buildCommand": "npm run build --prefix shop && node scripts/stage-shop.mjs",
   "builds": [
-    { "src": "api/**/*.ts", "use": "@vercel/node" },
-    { "src": "site/**", "use": "@vercel/static" }
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "site" }
+    },
+    { "src": "api/**/*.ts", "use": "@vercel/node" }
   ],
   "routes": [
     { "src": "/api/health", "dest": "/api/health.ts" },
@@ -15,12 +18,12 @@
     { "src": "/api/promotions", "dest": "/api/promotions.ts" },
     { "src": "/api/products/([^/]+)", "dest": "/api/products/[id].ts?id=$1" },
     { "src": "/api/products", "dest": "/api/products.ts" },
-    { "src": "/app/assets/(.*)", "dest": "/site/app/assets/$1" },
-    { "src": "/app/favicon.svg", "dest": "/site/favicon.svg" },
-    { "src": "/app", "dest": "/site/app/index.html" },
-    { "src": "/app/(.*)", "dest": "/site/app/index.html" },
-    { "src": "/docs", "dest": "/site/docs.html" },
-    { "src": "/", "dest": "/site/index.html" },
-    { "src": "/(.*)", "dest": "/site/$1" }
+    { "src": "/app/assets/(.*)", "dest": "/app/assets/$1" },
+    { "src": "/app/favicon.svg", "dest": "/favicon.svg" },
+    { "src": "/app", "dest": "/app/index.html" },
+    { "src": "/app/(.*)", "dest": "/app/index.html" },
+    { "src": "/docs", "dest": "/docs.html" },
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }

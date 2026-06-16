@@ -4,6 +4,7 @@
   "private": true,
   "description": "Megasoft Market — parody B2B digital goods portal (Vue 3 + Vercel API)",
   "scripts": {
+    "vercel-build": "npm run build",
     "build": "npm run build --prefix shop && node scripts/stage-shop.mjs",
     "dev:shop": "npm run dev --prefix shop",
     "dev:api": "vercel dev",
@@ -16,6 +17,7 @@
     "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^22.19.0",
     "@vercel/node": "^5.5.6",
+    "@vercel/static-build": "^2.4.0",
     "typescript": "^5.9.3"
   }
 }
