@@ -7,8 +7,8 @@ Parody B2B digital goods portal (Vue 3 + unified Vercel deploy)
 | Eternal Flame landing + `/docs` | ✅ |
 | Parody catalog (`data/catalog.json`) | ✅ |
 | Vercel serverless API (`api/`) | ✅ |
-| Vue 3 shop at `/app` | ⚠️ fix staged — stage-shop → `site/app/` |
-| `/api/health` | ✅ added |
+| Vue 3 shop at `/app` | ✅ stage-shop → `site/app/` on build |
+| `/api/health` | ✅ live |
 | Light shop theme (Glasshouse) | ✅ |
 | Donation page (PayNow / TNG QR env) | ✅ |
 | Unified Vercel deploy | ✅ |
